@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les' Aullian Achmad Argito · Talent Acquisition &amp; Employer Branding Portfolio</title>
+<meta name="description" content="Portfolio for the Talent Acquisition &amp; Employer Branding (HR) Intern role: recruitment, employer branding and administration evidence, ten MySkill HR courses, and two work samples built from the public intern form and @ecikarir.">
+<meta name="robots" content="noindex">
+<meta name="author" content="Les' Aullian Achmad Argito">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Les' Aullian Achmad Argito · Talent Acquisition &amp; Employer Branding Portfolio">
+<meta property="og:description" content="Recruitment, employer branding and administration: the work behind each responsibility, plus an intern-intake tracker and a content plan built for this application.">
+<meta property="og:image" content="https://lesaullianachmadargito.github.io/talent-branding-portfolio/assets/img/og-card.jpg">
+<meta property="og:url" content="https://lesaullianachmadargito.github.io/talent-branding-portfolio/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0F4C9C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F4C9C'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='27' text-anchor='middle' fill='%23fff'%3ELA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Each tab is its own view with its own colour, photo and layout; clicking the header switches all three. */
+  :root {
+    color-scheme: light;
+    --font: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+    --ink: #101828;
+    --ink-2: #344054;
+    --muted: #475467;
+    --line: #D0D5DD;
+    --panel: rgba(255, 255, 255, 0.92);
+    --max: 1120px;
+    --accent: #0F4C9C;
+    --deep: #0A3470;
+    --soft: #E8F0FB;
+    --tint: rgba(232, 240, 251, 0.55);
+  }
+  body[data-view="recruitment"] { --accent: #0E7C6B; --deep: #095A4D; --soft: #E1F3EF; --tint: rgba(225, 243, 239, 0.55); }
+  body[data-view="branding"]    { --accent: #C0392B; --deep: #8E2A20; --soft: #FCEAE7; --tint: rgba(252, 234, 231, 0.55); }
+  body[data-view="admin"]       { --accent: #B45309; --deep: #7C3A06; --soft: #FDF0E1; --tint: rgba(253, 240, 225, 0.55); }
+  body[data-view="learning"]    { --accent: #5B3FA8; --deep: #3F2A7A; --soft: #EFEAFB; --tint: rgba(239, 234, 251, 0.55); }
+
+  *, *::before, *::after { box-sizing: border-box; letter-spacing: normal; }
+  html { background: #fff; -webkit-text-size-adjust: 100%; scroll-padding-top: 86px; }
+  body { margin: 0; color: var(--ink); font: 400 16px/1.65 var(--font); -webkit-font-smoothing: antialiased; background: transparent; }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: var(--deep); text-underline-offset: 3px; }
+  a:hover { color: var(--accent); }
+  h1, h2, h3, h4 { margin: 0; line-height: 1.25; font-weight: 800; color: var(--ink); }
+  p { margin: 0 0 12px; }
+  p:last-child { margin-bottom: 0; }
+  b, strong { font-weight: 700; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+  .skip { position: absolute; left: -9999px; }
+  .skip:focus { left: 16px; top: 12px; background: #fff; border: 2px solid var(--accent); padding: 8px 12px; z-index: 90; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+  /* ---------- faded photo behind every view ---------- */
+  .stage { position: fixed; inset: 0; z-index: -1; overflow: hidden; background: #fff; }
+  .stage .bg { position: absolute; inset: -3%; background-size: cover; background-position: center; opacity: 0;
+               transform: scale(1.05); transition: opacity 0.8s ease, transform 6s ease; }
+  .stage .bg.on { opacity: 0.26; transform: scale(1); }
+  .stage .veil { position: absolute; inset: 0; transition: background-color 0.6s ease;
+                 background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.45) 55%, rgba(255,255,255,0.7) 100%); }
+  .stage .tint { position: absolute; inset: 0; background: var(--tint); transition: background-color 0.6s ease; mix-blend-mode: multiply; }
+
+  /* ---------- header: tabs that switch the whole view ---------- */
+  .top { position: sticky; top: 0; z-index: 50; background: var(--accent); color: #fff;
+         transition: background-color 0.45s ease; box-shadow: 0 6px 24px rgba(16, 24, 40, 0.12); }
+  .top-in { display: flex; align-items: center; gap: 18px; min-height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; white-space: nowrap; font-weight: 800; font-size: 15px; }
+  .brand:hover { color: #fff; }
+  .brand .mono { width: 34px; height: 34px; border-radius: 10px; background: #fff; color: var(--accent); display: grid; place-items: center;
+                 font-size: 14px; font-weight: 800; transition: color 0.45s ease; }
+  .tabs { position: relative; display: flex; gap: 4px; margin-left: auto; overflow-x: auto; scrollbar-width: none; padding: 10px 2px; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { position: relative; z-index: 1; display: block; white-space: nowrap; color: rgba(255, 255, 255, 0.9); text-decoration: none;
+         font-weight: 600; font-size: 14.5px; padding: 8px 14px; border-radius: 999px; transition: color 0.3s ease, background-color 0.3s ease; }
+  .tab:hover { color: #fff; background: rgba(255, 255, 255, 0.14); }
+  .tab[aria-current="page"] { color: var(--deep); background: transparent; font-weight: 800; }
+  .tabs .ink { position: absolute; z-index: 0; top: 10px; height: calc(100% - 20px); left: 0; width: 0; border-radius: 999px; background: #fff;
+               box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16); transition: left 0.42s cubic-bezier(.3,.8,.3,1), width 0.42s cubic-bezier(.3,.8,.3,1); }
+
+  /* ---------- views ---------- */
+  .view { padding: 46px 0 64px; }
+  .js .view { animation: rise 0.55s ease both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  .view-head { background: var(--panel); border: 1px solid var(--line); border-top: 6px solid var(--accent); border-radius: 18px;
+               padding: 26px 30px; margin-bottom: 26px; box-shadow: 0 10px 30px rgba(16, 24, 40, 0.06); transition: border-color 0.45s ease; }
+  .view-head h1, .view-head h2 { font-size: clamp(27px, 3.6vw, 40px); color: var(--deep); }
+  .view-head .lede { font-size: 18px; color: var(--ink-2); margin-top: 12px; max-width: 880px; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 24px 26px; box-shadow: 0 6px 20px rgba(16, 24, 40, 0.05); }
+  .panel h3 { font-size: 20px; margin-bottom: 10px; color: var(--deep); }
+  .panel h4 { font-size: 16px; margin-bottom: 6px; }
+  .meta { font-size: 14px; color: var(--muted); margin: -4px 0 10px; }
+  .stack { display: grid; gap: 20px; }
+  .grid { display: grid; gap: 20px; align-items: start; }
+  .grid > * { min-width: 0; }
+  .g2 { grid-template-columns: 1fr 1fr; }
+  .g3 { grid-template-columns: repeat(3, 1fr); }
+  .g-7-5 { grid-template-columns: 7fr 5fr; }
+  .g-5-7 { grid-template-columns: 5fr 7fr; }
+  figure { margin: 0; }
+  figure img { width: 100%; border-radius: 12px; border: 1px solid var(--line); background: #fff; }
+  figcaption { font-size: 13.5px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+  .chip { display: inline-block; font-size: 13px; font-weight: 700; border-radius: 999px; padding: 3px 11px; background: var(--soft); color: var(--deep); margin: 0 6px 6px 0; }
+  .chip.draft { background: var(--accent); color: #fff; }
+  .chips { margin: 4px 0 12px; }
+  ul.dots { list-style: none; margin: 0 0 8px; padding: 0; }
+  ul.dots li { position: relative; padding-left: 20px; margin-bottom: 7px; }
+  ul.dots li::before { content: ""; position: absolute; left: 3px; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .note { font-size: 14px; color: var(--ink-2); background: var(--soft); border-radius: 12px; padding: 12px 16px; }
+  .dash { border: 2px dashed var(--accent); }
+  .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+  .btn { display: inline-block; text-decoration: none; font-weight: 700; font-size: 15px; padding: 10px 18px; border-radius: 999px;
+         border: 2px solid var(--accent); color: #fff; background: var(--accent); transition: background-color 0.3s ease, color 0.3s ease; }
+  .btn:hover { background: #fff; color: var(--deep); }
+  .btn.ghost { background: #fff; color: var(--deep); }
+  .btn.ghost:hover { background: var(--accent); color: #fff; }
+  .pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 30px; flex-wrap: wrap; }
+  .pager a { flex: 0 1 340px; text-decoration: none; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; color: var(--ink); }
+  .pager a:hover { border-color: var(--accent); }
+  .pager small { display: block; font-size: 13px; color: var(--muted); }
+  .pager b { color: var(--deep); font-size: 17px; }
+  .pager .next { text-align: right; }
+
+  /* tables */
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; }
+  th { text-align: left; font-weight: 800; padding: 12px 14px; background: var(--soft); color: var(--deep); border-bottom: 1px solid var(--line); }
+  td { padding: 12px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+  tr:first-child td { border-top: 0; }
+  td.say { font-weight: 700; color: var(--deep); min-width: 190px; }
+  td a.go { font-weight: 700; white-space: nowrap; }
+
+  /* ---------- overview ---------- */
+  .hero { display: grid; grid-template-columns: 1fr 250px; gap: 36px; align-items: center; }
+  .hero h1 { font-size: clamp(34px, 5vw, 54px); line-height: 1.08; color: var(--deep); }
+  .hero .role { font-size: 19px; font-weight: 700; margin-top: 14px; color: var(--accent); }
+  .hero .lead { font-size: 17.5px; color: var(--ink-2); margin-top: 16px; max-width: 760px; }
+  .portrait img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; border-radius: 22px; border: 4px solid #fff;
+                  box-shadow: 12px 12px 0 var(--accent); background: #fff; transition: box-shadow 0.45s ease; }
+  .kpis { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin: 26px 0; }
+  .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; border-left: 5px solid var(--accent); }
+  .kpi .v { font-size: 28px; font-weight: 800; line-height: 1.05; color: var(--deep); }
+  .kpi .l { font-size: 13.5px; color: var(--ink-2); margin-top: 6px; line-height: 1.45; }
+  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+  .card h4 { color: var(--deep); margin-bottom: 6px; }
+  .card p { font-size: 15px; color: var(--ink-2); }
+
+  /* ---------- recruitment ---------- */
+  ol.flow { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  ol.flow li { counter-increment: s; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 16px; position: relative; }
+  ol.flow li::before { content: counter(s); display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 800; margin-bottom: 10px; }
+  ol.flow b { display: block; margin-bottom: 4px; color: var(--deep); }
+  ol.flow span { font-size: 14.5px; color: var(--ink-2); display: block; line-height: 1.5; }
+  .photos3 { display: grid; grid-template-columns: 1.7fr 0.75fr 0.75fr; gap: 12px; align-items: start; }
+  .photos3 figure img { height: 250px; object-fit: cover; }
+  .photos3 figure img.tallpic { object-position: center 38%; }
+  .certs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .certs img { border-radius: 8px; }
+  .routing td:first-child { font-weight: 700; white-space: nowrap; color: var(--deep); }
+  .routing td:nth-child(2) { font-size: 14.5px; }
+  .msg { background: #fff; border: 1px solid var(--line); border-radius: 16px 16px 16px 4px; padding: 14px 16px; font-size: 14.5px; line-height: 1.55; color: var(--ink-2); }
+  .msg h4 { font-size: 14.5px; color: var(--deep); margin-bottom: 6px; }
+
+  /* ---------- employer branding ---------- */
+  .media { display: grid; grid-template-columns: 0.62fr 1fr 1fr; grid-template-rows: auto auto; gap: 12px; }
+  .media .tall { grid-row: span 2; }
+  .media .tall img { aspect-ratio: 9 / 16; object-fit: cover; }
+  .spec { font-size: 14.5px; }
+  .spec td:first-child { font-weight: 700; color: var(--deep); white-space: nowrap; }
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 8px; }
+  .tiles img { border-radius: 6px; }
+  .plan td:first-child { font-weight: 800; color: var(--deep); white-space: nowrap; }
+  .story { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .story li { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+  .story .t { font-size: 13px; font-weight: 800; color: #fff; background: var(--accent); display: inline-block; border-radius: 999px; padding: 2px 10px; margin-bottom: 8px; }
+  .story b { display: block; color: var(--deep); margin-bottom: 4px; }
+  .story span { font-size: 14px; color: var(--ink-2); display: block; line-height: 1.5; }
+  .story q { display: block; font-size: 14px; font-weight: 600; color: var(--ink); margin-top: 6px; quotes: "\201C" "\201D"; }
+  blockquote.caption { margin: 0; background: #fff; border-left: 5px solid var(--accent); border-radius: 0 12px 12px 0; padding: 14px 18px; font-size: 15px; color: var(--ink-2); }
+
+  /* ---------- administration ---------- */
+  .doc { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 10px; }
+  .doc img { border: 0; border-radius: 6px; }
+  .four { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 12px 0; }
+  .four div { background: var(--soft); border-radius: 12px; padding: 12px; font-size: 14px; line-height: 1.45; }
+  .four b { display: block; color: var(--deep); }
+  .logic td:first-child { font-weight: 800; color: var(--deep); white-space: nowrap; }
+  .shot { display: block; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 8px; overflow-x: auto; cursor: zoom-in; }
+  .shot:hover { border-color: var(--accent); }
+  .shot img { border: 0; min-width: 760px; border-radius: 6px; }
+  .shot.narrow img { min-width: 0; max-width: 560px; margin: 0 auto; }
+
+  /* ---------- HR learning ---------- */
+  .courses { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .course-group { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; }
+  .course-group h3 { font-size: 18px; color: var(--deep); margin-bottom: 10px; }
+  .course { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; margin-bottom: 8px; }
+  .course .n { flex: 0 0 30px; height: 30px; border-radius: 9px; background: var(--accent); color: #fff; font-weight: 800; font-size: 14px; display: grid; place-items: center; }
+  .course b { display: block; font-size: 15px; line-height: 1.35; }
+  .use { font-size: 14.5px; color: var(--ink-2); border-top: 1px dashed var(--line); padding-top: 10px; margin-top: 10px; }
+  .use b { color: var(--deep); }
+  .chart svg { width: 100%; max-width: 480px; height: auto; display: block; }
+
+  /* ---------- footer ---------- */
+  footer { background: var(--deep); color: #EAECF0; padding: 40px 0 44px; transition: background-color 0.45s ease; }
+  footer h2 { color: #fff; font-size: 24px; margin-bottom: 8px; }
+  footer a { color: #fff; }
+  footer .small { font-size: 13.5px; color: #D0D5DD; margin-top: 16px; max-width: 880px; line-height: 1.6; }
+
+  @media (max-width: 980px) {
+    .kpis { grid-template-columns: repeat(3, 1fr); }
+    .g3, .g2, .g-7-5, .g-5-7, .cards, .courses { grid-template-columns: 1fr; }
+    ol.flow { grid-template-columns: 1fr 1fr; }
+    .story { grid-template-columns: 1fr 1fr; }
+    .certs { grid-template-columns: repeat(3, 1fr); }
+    .four { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 760px) {
+    .top-in { flex-wrap: wrap; gap: 0; min-height: 0; padding-top: 10px; }
+    .brand { font-size: 14px; }
+    .tabs { margin-left: -4px; width: calc(100% + 8px); padding: 8px 2px 10px; }
+    .tabs .ink { top: 8px; height: calc(100% - 18px); }
+    .tab { padding: 7px 12px; font-size: 14px; }
+    html { scroll-padding-top: 120px; }
+    .hero { grid-template-columns: 1fr; gap: 22px; }
+    .portrait { max-width: 200px; order: -1; }
+    .media { grid-template-columns: 1fr 1fr; }
+    .media .tall { grid-row: auto; grid-column: span 2; max-width: 280px; }
+    .photos3 { grid-template-columns: 1fr 1fr; }
+    .photos3 figure:first-child { grid-column: span 2; }
+    .photos3 figure img { height: 200px; }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 0 16px; }
+    body { font-size: 15.5px; }
+    .view { padding: 26px 0 48px; }
+    .view-head { padding: 20px 18px; border-radius: 14px; }
+    .view-head .lede { font-size: 16.5px; }
+    .panel { padding: 18px; border-radius: 14px; }
+    .kpis { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .kpi .v { font-size: 24px; }
+    ol.flow, .story, .four { grid-template-columns: 1fr; }
+    .certs { grid-template-columns: 1fr 1fr; }
+    .hero .role { font-size: 17px; }
+    .brand .bn { max-width: 230px; overflow: hidden; text-overflow: ellipsis; }
+    table { font-size: 14px; }
+    th, td { padding: 10px 11px; }
+    .stack-sm thead { display: none; }
+    .stack-sm, .stack-sm tbody, .stack-sm tr, .stack-sm td { display: block; width: 100%; }
+    .stack-sm tr { border-top: 1px solid var(--line); padding: 10px 12px; }
+    .stack-sm tr:first-child { border-top: 0; }
+    .stack-sm td { border: 0; padding: 2px 0; min-width: 0 !important; white-space: normal !important; }
+    .stack-sm td[data-l]::before { content: attr(data-l) ": "; font-weight: 700; color: var(--muted); }
+    .table-wrap.stack-wrap { overflow-x: visible; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .js .view { animation: none; }
+    .stage .bg, .tabs .ink, .top, .tab { transition: none; }
+  }
+  @media print {
+    .top { position: static; }
+    .view[hidden] { display: block !important; }
+    .stage { display: none; }
+  }
+</style>
+<script>document.documentElement.className = "js";</script>
+</head>
+<body data-view="overview">
+<a class="skip" href="#main">Skip to content</a>
+<div class="stage" aria-hidden="true">
+  <div class="bg on" id="bgA" style="background-image:url('assets/img/bg-overview.jpg')"></div>
+  <div class="bg" id="bgB"></div>
+  <div class="tint"></div>
+  <div class="veil"></div>
+</div>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#overview" data-go="overview"><span class="mono">LA</span><span class="bn">Les' Aullian Achmad Argito</span></a>
+    <nav class="tabs" aria-label="Portfolio sections">
+      <a class="tab" href="#overview" data-go="overview" aria-current="page">Overview</a>
+      <a class="tab" href="#recruitment" data-go="recruitment">Recruitment</a>
+      <a class="tab" href="#branding" data-go="branding">Employer Branding</a>
+      <a class="tab" href="#admin" data-go="admin">Administration</a>
+      <a class="tab" href="#learning" data-go="learning">HR Learning</a>
+      <span class="ink" aria-hidden="true"></span>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ======================================================= OVERVIEW -->
+<section class="view" id="overview" data-bg="assets/img/bg-overview.jpg" data-title="Overview">
+  <div class="wrap">
+    <div class="view-head">
+      <div class="hero">
+        <div>
+          <h1>Les' Aullian Achmad Argito</h1>
+          <div class="role">Talent Acquisition &amp; Employer Branding (HR) Intern applicant · PT Electronic City Indonesia Tbk, SCBD</div>
+          <p class="lead">Fresh graduate in Agricultural Engineering (S.T.P., Universitas Gadjah Mada, GPA 3.44/4.00, graduated 16 July 2026). I have not held an HR title yet, so this site takes your posting's three responsibilities and three requirements one at a time and shows the work I have already done for each. Two work samples were built for this application from your public intern form and the @ecikarir account.</p>
+          <div class="btns">
+            <a class="btn" href="mailto:lesargito@gmail.com?subject=Talent%20Acquisition%20%26%20Employer%20Branding%20Intern">Email me</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/lesaullianachmadargito/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn ghost" href="https://github.com/lesaullianachmadargito" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <div class="portrait"><img src="assets/img/portrait.jpg" width="540" height="720" alt="Portrait of Les' Aullian Achmad Argito"></div>
+      </div>
+    </div>
+
+    <div class="kpis" aria-label="Key figures">
+      <div class="kpi"><div class="v">30+</div><div class="l">teams sourced, screened and led to fixed deadlines, 2022 to 2026</div></div>
+      <div class="kpi"><div class="v">~60</div><div class="l">applicants run through one pipeline as its single contact point</div></div>
+      <div class="kpi"><div class="v">~95</div><div class="l">students per cohort assessed on one rubric as a teaching assistant</div></div>
+      <div class="kpi"><div class="v">11</div><div class="l">edit projects in CapCut: pitches, a 9:16 reel, recaps</div></div>
+      <div class="kpi"><div class="v">160</div><div class="l">residents' identity documents verified in one 4-hour session</div></div>
+      <div class="kpi"><div class="v">10</div><div class="l">MySkill e-learning courses in human resources</div></div>
+    </div>
+
+    <div class="panel">
+      <h2 style="font-size:24px;color:var(--deep);margin-bottom:14px">Your posting, and where my evidence is</h2>
+      <div class="table-wrap stack-wrap">
+        <table class="stack-sm">
+          <thead><tr><th>Your posting says</th><th>What I can show</th><th>Where</th></tr></thead>
+          <tbody>
+            <tr><td class="say">Support for recruitment process</td><td data-l="Evidence">30+ teams screened with the same steps for everyone; a 60-applicant competition pipeline run as its single contact point; about 95 students per cohort scored on one rubric.</td><td data-l="Tab"><a class="go" href="#recruitment" data-go="recruitment">Recruitment</a></td></tr>
+            <tr><td class="say">Support for employer branding activities</td><td data-l="Evidence">11 CapCut edits for my own programmes; an Instagram launch grid designed in Canva; a two-day school outreach event; an English pitch that won Best Presentation at an international final.</td><td data-l="Tab"><a class="go" href="#branding" data-go="branding">Employer Branding</a></td></tr>
+            <tr><td class="say">Handle administrative task</td><td data-l="Evidence">160 residents' KTP and KK checked in one session; two days at a village service counter; a formula-driven tracker that won 1st place nationally.</td><td data-l="Tab"><a class="go" href="#admin" data-go="admin">Administration</a></td></tr>
+            <tr><td class="say">Min. bachelor's degree or final-year student, any major</td><td data-l="Evidence">S.T.P. (Bachelor of Agricultural Technology), Universitas Gadjah Mada, graduated 16 July 2026. Programme accredited Unggul (BAN-PT) and by ASIIN.</td><td data-l="Tab"><a class="go" href="#learning" data-go="learning">HR Learning</a></td></tr>
+            <tr><td class="say">Good communication skill</td><td data-l="Evidence">1st Winner and Best Presentation, BA-SE 2026 (Thailand, in English); land, labour and schedules agreed with a village government and two farmer groups; a COO's recommendation letter from a remote team.</td><td data-l="Tab"><a class="go" href="#recruitment" data-go="recruitment">Recruitment</a></td></tr>
+            <tr><td class="say">Basic editing skill for photos / videos</td><td data-l="Evidence">CapCut: cutting, caption timing, voice clips, 9:16 reels. Canva: posts, banners, a split Instagram grid.</td><td data-l="Tab"><a class="go" href="#branding" data-go="branding">Employer Branding</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid g-7-5" style="margin-top:20px">
+      <div class="panel">
+        <h3>Built for this application</h3>
+        <div class="cards">
+          <div class="card"><h4>An intern-intake tracker on your own form</h4><p>An Excel file whose columns are the fields of your intern form: the 46 named tracks, Status Magang, the class-schedule question and your 12 source options. Illustrative data only.</p><p><a href="#admin" data-go="admin">See it under Administration</a></p></div>
+          <div class="card"><h4>A four-week plan for @ecikarir</h4><p>Four posts built on the highlights you already run (Campus Hiring, Tips &amp; Trick, Penipuan), a reel storyboard, and a way to count applications per post instead of likes.</p><p><a href="#branding" data-go="branding">See it under Employer Branding</a></p></div>
+        </div>
+      </div>
+      <div class="panel dash">
+        <h3>What I do not have yet</h3>
+        <ul class="dots">
+          <li>An HR title or an HR internship.</li>
+          <li>Any ATS or HRIS used as a recruiter.</li>
+          <li>Authority to interpret psychological tests (I would keep to scheduling, administering and key-based scoring).</li>
+          <li>Adobe Photoshop or Premiere Pro; I edit in CapCut and Canva.</li>
+          <li>Formal training in labour law (PKWT).</li>
+        </ul>
+      </div>
+    </div>
+
+    <nav class="pager" aria-label="Next section">
+      <span></span>
+      <a class="next" href="#recruitment" data-go="recruitment"><small>Next</small><b>Recruitment</b></a>
+    </nav>
+  </div>
+</section>
+
+<!-- ======================================================= RECRUITMENT -->
+<section class="view" id="recruitment" data-bg="assets/img/bg-recruitment.jpg" data-title="Recruitment">
+  <div class="wrap">
+    <div class="view-head">
+      <h2>Recruitment: the same steps for every candidate</h2>
+      <p class="lede">I have chosen people for 30+ teams under fixed deadlines and assessed about 95 students per cohort. Both taught me the rule I would bring to your hiring: score everyone on the same evidence, not on the impression they leave.</p>
+    </div>
+
+    <div class="stack">
+      <div class="panel">
+        <h3>How I screened members for 30+ teams, 2022 to 2026</h3>
+        <ol class="flow">
+          <li><b>Define the seat</b><span>The capability the deadline needs, written down before approaching anyone.</span></li>
+          <li><b>Source</b><span>Campus networks, asking for people who had delivered similar work.</span></li>
+          <li><b>Conversation</b><span>About work they had actually delivered: what they did, what went wrong.</span></li>
+          <li><b>Trial task</b><span>A small real task before committing; people who could not deliver it were not carried forward.</span></li>
+        </ol>
+        <p style="margin-top:14px">The teams were unpaid and worked three to nine months to fixed registration deadlines, so the screen had to predict who would still deliver in month three, not who interviewed well.</p>
+        <div class="chips"><span class="chip">45+ selective programmes</span><span class="chip">30+ as team leader</span><span class="chip">BA-SE 2026: 1st Winner and Best Presentation</span><span class="chip">PLN SustainAction 2025: 1 of 3 winners, IDR 100,000,000</span></div>
+        <div class="photos3">
+          <figure><img src="assets/img/base-stage.jpg" width="1100" height="498" loading="lazy" alt="Online final of the BA-SE Global Social Enterprise Competition 2026 with the CircuLarva team on screen"><figcaption>BA-SE Global Social Enterprise Competition 2026 (RMUTI, Thailand): 1st Winner and Best Presentation, English pitch delivered as team leader.</figcaption></figure>
+          <figure><img class="tallpic" src="assets/img/pln-stage.jpg" width="720" height="1280" loading="lazy" alt="PLN SustainAction 2025 award stage"><figcaption>PLN SustainAction 2025: 1 of 3 winners.</figcaption></figure>
+          <figure><img class="tallpic" src="assets/img/team-gate.jpg" width="720" height="1280" loading="lazy" alt="The EcoMaggot team at the partner farmers' group gate in Wonokerto, Sleman"><figcaption>The EcoMaggot team, Wonokerto, Sleman.</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="grid g2">
+        <div class="panel">
+          <h3>A 60-applicant pipeline, one contact point</h3>
+          <div class="meta">Business Plan Competition for senior-high students, BEM FTP UGM · Junior Staff · 2023 to 2024</div>
+          <p>I was the single contact point for about 60 participants over roughly three months, working with a 10-person committee from online registration to an offline final.</p>
+          <ul class="dots">
+            <li>Registration data, document submission and technical information for every entrant.</li>
+            <li>Participant questions answered through the online rounds.</li>
+            <li>Incomplete files followed up directly; the event closed with a written evaluation.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>One rubric for about 95 people</h3>
+          <div class="meta">Laboratory teaching assistant, UGM · 5 appointments in the Diploma Supplement · January 2024 to July 2025</div>
+          <p>I marked method and reasoning rather than presentation, so a confident performer could not outscore someone who had understood the work, and I delivered complete grade records on deadline.</p>
+          <div class="certs">
+            <img src="assets/img/ta-2024-gambar-teknik.jpg" width="640" height="313" loading="lazy" alt="Certificate: co-assistant, Gambar Teknik, even semester 2023/2024">
+            <img src="assets/img/ta-2024-listrik-elektronika.jpg" width="640" height="309" loading="lazy" alt="Certificate: co-assistant, Listrik dan Elektronika, odd semester 2024/2025">
+            <img src="assets/img/ta-2025-daya-pertanian.jpg" width="640" height="307" loading="lazy" alt="Certificate: co-assistant, Daya dalam Bidang Pertanian, even semester 2024/2025">
+            <img src="assets/img/ta-2025-pengukuran-instrumentasi.jpg" width="640" height="307" loading="lazy" alt="Certificate: co-assistant, Teknik Pengukuran dan Instrumentasi, even semester 2024/2025">
+            <img src="assets/img/ta-2025-sistem-kontrol.jpg" width="640" height="307" loading="lazy" alt="Certificate: co-assistant, Pengantar Sistem Kontrol, even semester 2024/2025">
+          </div>
+          <figcaption>The five appointment certificates recorded in my Diploma Supplement. Student ID numbers are hidden on this public page.</figcaption>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Your intake: 46 tracks through one link</h3>
+        <p>Your intern form routes 46 named tracks through one Google Form, next to separate forms for Electronic City store and DC roles, Grooceries City stores and Service City aftersales. That makes two things matter more than usual: getting each applicant to the right user department quickly, and catching the same person applying to several tracks. This is how I would group the tracks, and where my own background lets me read an applicant's CV or portfolio for substance rather than keywords. The grouping is my assumption from the track names; the real user departments come from your team.</p>
+        <div class="table-wrap stack-wrap">
+          <table class="routing stack-sm">
+            <thead><tr><th>Cluster</th><th>Tracks on your form</th><th>What I can read for substance</th></tr></thead>
+            <tbody>
+              <tr><td>People (HR)</td><td data-l="Tracks">Employer Branding, Recruitment, HRD, Training Development</td><td data-l="My grounding">10 MySkill HR courses; two sides of the training room as teaching assistant and trainee</td></tr>
+              <tr><td>Marketing and content</td><td data-l="Tracks">Social Media Specialist, Graphic Designer, Video Editor, Motion Graphic, Public Relations, Event, Host Live &amp; Marketplace Support, Customer Relationship Management</td><td data-l="My grounding">Whether a reel or design portfolio was really cut and captioned by the applicant (CapCut, Canva)</td></tr>
+              <tr><td>E-commerce</td><td data-l="Tracks">Admin E-Commerce, E-Commerce</td><td data-l="My grounding">-</td></tr>
+              <tr><td>Merchandising and buying</td><td data-l="Tracks">Buyer, Product/ Merchandising, Merchandising, Visual Merchandiser, B2B (Central Purchasing), Procurement, Supply &amp; Demand Planning</td><td data-l="My grounding">Batch and expiry logic (FEFO) from GRIT PANGAN AMAN</td></tr>
+              <tr><td>Finance, tax and legal</td><td data-l="Tracks">Accounting, Finance, Tax, Legal</td><td data-l="My grounding">-</td></tr>
+              <tr><td>IT and data</td><td data-l="Tracks">IT Support, IT Developer, Data Analyst</td><td data-l="My grounding">Python and Excel, with my public code on GitHub</td></tr>
+              <tr><td>Operations and service</td><td data-l="Tracks">Logistics, General Affair, Administration, Call Center, Sales</td><td data-l="My grounding">Front-desk work at a village service counter</td></tr>
+              <tr><td>Property and store development</td><td data-l="Tracks">Interior Designer, Architect, Civil Engineer, ME Engineer, Quantity Surveyor, Site Development, Maintenance, HVAC Technician, Casual Leasing, Tenant Relation</td><td data-l="My grounding">Engineering degree: technical drawing (taught as assistant), machine design, electrical and control courses</td></tr>
+              <tr><td>Culinary (Cook &amp; Bake City)</td><td data-l="Tracks">Cook and Bake City, Chef Assistant, Cook Helper</td><td data-l="My grounding">7 food-safety certificates: GMP, HACCP, ISO 22000, FSSC 22000, QA, QC, HACCP documentation</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note" style="margin-top:14px">The final judgement on a technical candidate stays with the user department. My part is to send them a shortlist that is complete, comparable and on time.</p>
+      </div>
+
+      <div class="grid g-5-7">
+        <div class="panel">
+          <h3>Campus and school hiring</h3>
+          <p>Your form counts <b>Kampus</b> and <b>Sekolah</b> among its sources, and @ecikarir keeps a Campus Hiring highlight. I am an alumnus of both ends of that pipeline: a vocational school (SMK Negeri 63 Jakarta, Jagakarsa) and Universitas Gadjah Mada. I can speak to SMK leavers and final-year students in their own terms, and I have run a school outreach session before (see Employer Branding).</p>
+          <p>Remote teamwork is on record too. The COO of Titik Terang, a fully remote volunteer community, wrote that I was "a dependable, proactive, and positive presence within our team".</p>
+          <figure><img src="assets/img/coo-letter.jpg" width="910" height="845" loading="lazy" alt="Letter of Recommendation from the Chief Operating Officer of Titik Terang, 14 July 2026"><figcaption>Titik Terang (MatchupSkills), letter of recommendation, 14 July 2026. The signature is cropped on this public page.</figcaption></figure>
+        </div>
+        <div class="panel">
+          <h3>Candidate messages I would send</h3>
+          <p style="font-size:15px">Drafts in Indonesian, as candidates would receive them. The first two repeat that recruitment is free, which is the message of your Penipuan highlight. <span class="chip draft">Draft</span></p>
+          <div class="stack" style="gap:12px">
+            <div class="msg"><h4>1. Lamaran diterima</h4>Halo [Nama], terima kasih sudah melamar magang posisi [Posisi] di PT Electronic City Indonesia Tbk. Lamaranmu sudah kami terima dan sedang ditinjau. Kandidat yang lolos akan kami hubungi paling lambat [tanggal]. Proses rekrutmen Electronic City tidak dipungut biaya apa pun.</div>
+            <div class="msg"><h4>2. Undangan interview</h4>Halo [Nama], kamu kami undang interview magang posisi [Posisi] pada [hari, tanggal] pukul [jam] WIB di [lokasi atau tautan]. Mohon konfirmasi kehadiran sebelum [tanggal]. Jika status magangmu Kewajiban Kampus atau PKL, siapkan surat pengantar dari kampus atau sekolah. Seluruh proses ini tanpa biaya.</div>
+            <div class="msg"><h4>3. Kabar keputusan</h4>Halo [Nama], terima kasih sudah mengikuti seleksi magang posisi [Posisi]. Untuk periode ini kami belum dapat melanjutkan lamaranmu. Datamu kami simpan sampai [tanggal] untuk posisi lain yang sesuai, kecuali kamu meminta untuk dihapus.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="pager" aria-label="Previous and next section">
+      <a href="#overview" data-go="overview"><small>Previous</small><b>Overview</b></a>
+      <a class="next" href="#branding" data-go="branding"><small>Next</small><b>Employer Branding</b></a>
+    </nav>
+  </div>
+</section>
+
+<!-- ======================================================= EMPLOYER BRANDING -->
+<section class="view" id="branding" data-bg="assets/img/bg-branding.jpg" data-title="Employer Branding">
+  <div class="wrap">
+    <div class="view-head">
+      <h2>Employer branding: photo, video and events</h2>
+      <p class="lede">Employer branding is explaining a workplace to people who have never been inside it. I have done that for my own programmes, in video, in design and in front of an audience.</p>
+    </div>
+
+    <div class="stack">
+      <div class="panel">
+        <h3>Video: 11 CapCut projects, August 2025 to July 2026</h3>
+        <div class="media">
+          <figure class="tall"><img src="assets/img/cc-reel.jpg" width="540" height="960" loading="lazy" alt="Frame from a 9:16 reel cut from the BA-SE 2026 livestream"><figcaption>9:16 reel, 59 s, cut from the BA-SE 2026 livestream.</figcaption></figure>
+          <figure><img src="assets/img/cc-pitch.jpg" width="1100" height="619" loading="lazy" alt="Frame from a competition pitch video with a bold caption over an explainer graphic"><figcaption>Competition pitch, 170 s: captions timed word by word, key words highlighted.</figcaption></figure>
+          <figure><img src="assets/img/cc-kkn.jpg" width="720" height="480" loading="lazy" alt="Frame from a community-service recap video showing a KKN-PPM UGM shirt"><figcaption>Community-service recap, 59 s, cut from 74 shots.</figcaption></figure>
+          <div style="grid-column: span 2">
+            <div class="table-wrap">
+              <table class="spec">
+                <tbody>
+                  <tr><td>Competition pitch</td><td>170 s, 41 shots on 5 video tracks, 68 caption segments, 20 recorded voice clips</td></tr>
+                  <tr><td>Oil palm pitch</td><td>161 s with voice-over, 5 video tracks</td></tr>
+                  <tr><td>9:16 reel</td><td>59 s from a livestream, re-framed for vertical viewing</td></tr>
+                  <tr><td>KKN recap</td><td>59 s, 71 photos and a clip, cut to music</td></tr>
+                  <tr><td>Other edits</td><td>A 156 s video essay, two 10-minute recording trims and four shorter cuts</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top:12px;font-size:15px">I cut and assembled every edit myself in CapCut and timed the captions where there are any; the figures come from the project files on my laptop. The full videos are available on request. They are not published here because they show teammates and third-party music.</p>
+      </div>
+
+      <div class="grid g-7-5">
+        <div class="panel">
+          <h3>Design: a programme launch for Instagram</h3>
+          <figure><img src="assets/img/canva-banner.jpg" width="1400" height="583" loading="lazy" alt="Canva banner reading SEGERA HADIR for the EcoMaggot programme launch"></figure>
+          <div class="tiles">
+            <img src="assets/img/canva-tile1.jpg" width="520" height="520" loading="lazy" alt="Instagram grid tile 1">
+            <img src="assets/img/canva-tile2.jpg" width="520" height="520" loading="lazy" alt="Instagram grid tile 2">
+            <img src="assets/img/canva-tile3.jpg" width="520" height="520" loading="lazy" alt="Instagram grid tile 3">
+          </div>
+          <figcaption>One 3,240 x 1,350 px banner designed in Canva and split into a 3-tile grid (17 May 2026), built around one message: turning snake-fruit waste into value. #WonokertoBerdaya #SustainAction2025</figcaption>
+        </div>
+        <div class="panel">
+          <h3>Events that ran to the rundown</h3>
+          <ul class="dots">
+            <li><b>School outreach</b>, KKN-PPM UGM, 16 to 17 July 2025, 420 minutes: venue, props, projector and sound, rehearsal, evaluation, photo and video documentation.</li>
+            <li><b>Competition final</b>, BEM FTP UGM: about 60 participants, a 10-person committee.</li>
+            <li><b>Seminars</b>, Gadjah Mada Entrepreneurship Community (2024 to 2025): committee work, participant administration, documentation.</li>
+            <li><b>International final</b>, BA-SE 2026: English pitch as team leader, 1st Winner and Best Presentation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel dash">
+        <h3>A four-week plan for @ecikarir <span class="chip draft" style="vertical-align:middle">Draft for Electronic City</span></h3>
+        <p>@ecikarir already has nearly 33,000 followers (September 2026), a bio that says you never charge fees, and highlights for Campus Hiring, Tips &amp; Trick, Apply Now and Penipuan. The plan builds on those instead of starting over. Post texts are in Indonesian, as they would be published.</p>
+        <div class="table-wrap stack-wrap">
+          <table class="plan stack-sm">
+            <thead><tr><th>Week</th><th>Post</th><th>Why it helps hiring</th><th>What I would count</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td data-l="Post"><b>Reel, 30 to 40 s:</b> "Sehari jadi intern di Electronic City SCBD", filmed with a current intern from morning check-in to a team meeting.</td><td data-l="Why">Candidates see the real job before applying.</td><td data-l="Count">Applications through this reel's own short link, not views.</td></tr>
+              <tr><td>2</td><td data-l="Post"><b>Carousel, 5 slides:</b> "Cara cek lowongan asli Electronic City": the official channels in your Linktree, no fees at any stage, no request to transfer money.</td><td data-l="Why">Extends the Penipuan highlight; protects applicants and the company name.</td><td data-l="Count">"Is this real?" questions in DMs, before and after.</td></tr>
+              <tr><td>3</td><td data-l="Post"><b>Carousel, 6 slides:</b> "46 posisi magang, pilih yang mana?": the tracks in 9 groups, which ones need a portfolio, who each one suits.</td><td data-l="Why">Fewer applications to the wrong track and fewer duplicates.</td><td data-l="Count">Duplicate rate in the intake tracker.</td></tr>
+              <tr><td>4</td><td data-l="Post"><b>Reel and Story:</b> a Campus Hiring recap plus "Tips &amp; Trick: CV magang satu halaman".</td><td data-l="Why">Feeds two highlights you already run.</td><td data-l="Count">Kampus and Job Fair applicants who pass CV screening.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 style="margin:20px 0 10px;color:var(--deep)">Storyboard for week 1: six shots, about 36 seconds</h4>
+        <ol class="story">
+          <li><span class="t">0 to 3 s</span><b>Hook</b><span>Walking into the SCBD office with a lanyard.</span><q>Magang di Electronic City itu ngapain aja, sih?</q></li>
+          <li><span class="t">3 to 9 s</span><b>Morning</b><span>Opening the day's task list at the desk.</span><q>08.30 · cek daftar tugas hari ini</q></li>
+          <li><span class="t">9 to 16 s</span><b>The work</b><span>A team meeting, a store visit or a content shoot.</span><q>10.00 · ikut rapat tim</q></li>
+          <li><span class="t">16 to 24 s</span><b>What they made</b><span>Showing a poster, a report or a spreadsheet they built.</span><q>Yang aku pelajari minggu ini: ...</q></li>
+          <li><span class="t">24 to 31 s</span><b>In their words</b><span>One sentence to camera, subtitled.</span><q>Subtitle of the intern's own sentence</q></li>
+          <li><span class="t">31 to 36 s</span><b>Call to action</b><span>End card with the link and the no-fee line.</span><q>Daftar: bit.ly/ECIINTERN · Rekrutmen tanpa biaya</q></li>
+        </ol>
+        <h4 style="margin:20px 0 8px;color:var(--deep)">Caption draft</h4>
+        <blockquote class="caption">Penasaran magang di Electronic City itu seperti apa? Ikut sehari bareng [nama], intern [divisi] di kantor SCBD: dari cek tugas pagi sampai rapat tim. Lowongan magang sedang dibuka untuk banyak posisi, dari Recruitment sampai Video Editor. Daftar lewat link di bio. Ingat, rekrutmen Electronic City tidak dipungut biaya apa pun.</blockquote>
+
+        <h4 style="margin:20px 0 8px;color:var(--deep)">How each post is judged</h4>
+        <ul class="dots">
+          <li>One short link per post counts clicks; the form's own "Dari mana anda tahu" answer counts applications; the intake tracker shows who passes CV screening and who joins.</li>
+          <li>A post is judged on qualified applications and joins, not on likes. Reach can grow while qualified applications do not; I check what a number is counting before I report it.</li>
+          <li>A post with fewer than five applications is too small to compare with another; the tracker marks it "too few to judge".</li>
+        </ul>
+        <p class="note" style="margin-top:12px">Prepared for this application from @ecikarir's public profile, the Linktree and the intern form. It is not an Electronic City post and uses no Electronic City logo or photograph.</p>
+      </div>
+    </div>
+
+    <nav class="pager" aria-label="Previous and next section">
+      <a href="#recruitment" data-go="recruitment"><small>Previous</small><b>Recruitment</b></a>
+      <a class="next" href="#admin" data-go="admin"><small>Next</small><b>Administration</b></a>
+    </nav>
+  </div>
+</section>
+
+<!-- ======================================================= ADMINISTRATION -->
+<section class="view" id="admin" data-bg="assets/img/bg-admin.jpg" data-title="Administration">
+  <div class="wrap">
+    <div class="view-head">
+      <h2>Administration: records that stay correct</h2>
+      <p class="lede">Recruitment data fails quietly: a missing campus letter, the same person applying to two tracks, an applicant nobody has answered for two weeks. I have handled each kind of problem outside HR, and the tracker at the bottom of this page applies the same care to your intern form.</p>
+    </div>
+
+    <div class="stack">
+      <div class="grid g-7-5">
+        <div class="panel">
+          <h3>160 residents' documents in one 4-hour session</h3>
+          <div class="meta">KKN-PPM UGM, Unit 2025-JI059 · Desa Tegalweru, Kab. Malang · person-in-charge for 43 of the unit's 79 activities</div>
+          <p>Registration for government rice aid at the Tegalweru village hall on 29 July 2025. The starting data was out of date, so every entry was checked in person:</p>
+          <div class="four">
+            <div><b>1. KTP</b>identity card checked</div>
+            <div><b>2. KK</b>family card checked</div>
+            <div><b>3. RT/RW</b>confirmed with neighbourhood heads</div>
+            <div><b>4. Match</b>old manual data against the digital list</div>
+          </div>
+          <div class="doc"><img src="assets/img/kkn-logbook.png" width="944" height="485" loading="lazy" alt="Activity record from the KKN-PPM report: Pendataan Penerima Bantuan Beras Pemerintah, 29 July 2025, 240 minutes"></div>
+          <figcaption>Activity record from my KKN-PPM final report. Two more days on the village office's public-service counter (30 to 31 July 2025, alongside 9 officials) gave me the front-desk habit of answering every enquiry the same day.</figcaption>
+        </div>
+        <div class="stack">
+          <div class="panel">
+            <h3>Status computed, not typed</h3>
+            <div class="meta">GRIT PANGAN AMAN · 1st Place (national, individual), The GRIT Project 2026</div>
+            <p>An inventory tracker for food micro-businesses, shown with its demonstration data. Days remaining and status come from dates with IF and TODAY, records are looked up with INDEX-MATCH, and a COUNTIF dashboard counts them.</p>
+            <div class="doc"><img src="assets/img/grit-dashboard.png" width="690" height="318" loading="lazy" alt="GRIT PANGAN AMAN dashboard with status counters"></div>
+          </div>
+          <div class="panel">
+            <h3>Paperwork that went out on time</h3>
+            <ul class="dots">
+              <li>BEM FTP UGM, Head of Division: 7 staff, one programme each; data recaps, documentation and reports checked for completeness before submission.</li>
+              <li>EcoMaggot Village (PLN SustainAction 2025): work plans, implementation evidence and reports to the funder on its reporting calendar.</li>
+              <li>PT Petrokimia Gresik, industry internship: a technical report reviewed with the division supervisor.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel dash">
+        <h3>Work sample: an intake tracker built on your intern form <span class="chip draft" style="vertical-align:middle">Illustrative data</span></h3>
+        <p>Every column that a candidate fills comes from your own form: the 46 named tracks, Status Magang (Mandiri, Kewajiban Kampus, PKL), the class-schedule question, the start date and your 12 source options. The rest is formulas, so the weekly list of what needs doing writes itself. 64 invented applicants, identified by ID only.</p>
+        <p><a class="btn" href="assets/files/intern-intake-tracker-illustrative.xlsx" download>Download the Excel file (illustrative)</a></p>
+        <div class="table-wrap stack-wrap" style="margin-top:16px">
+          <table class="logic stack-sm">
+            <thead><tr><th>Column</th><th>How it works</th></tr></thead>
+            <tbody>
+              <tr><td>Cluster</td><td data-l="Logic">INDEX-MATCH against a Routing sheet that maps the 46 tracks to 9 clusters, so each applicant lands with the right reviewer.</td></tr>
+              <tr><td>Missing docs</td><td data-l="Logic">Counts a missing CV, a missing portfolio where the track needs one, and a missing campus or school letter for Kewajiban Kampus and PKL applicants.</td></tr>
+              <tr><td>CHECK SCHEDULE</td><td data-l="Logic">Raised when the form's class answer is three or more meetings a week, so working days are agreed before the interview, not after the offer.</td></tr>
+              <tr><td>FOLLOW UP</td><td data-l="Logic">Raised when an active applicant has waited more than 5 days at one stage (the limit is a setting).</td></tr>
+              <tr><td>CHECK DUPLICATE</td><td data-l="Logic">Raised when one email appears twice, the most likely duplicate on a single form with 46 tracks.</td></tr>
+              <tr><td>Source effectiveness</td><td data-l="Logic">Applicants, interviews and joins per source, using your form's own list; any source with fewer than 5 applicants is marked "too few to judge".</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h4 style="margin:20px 0 8px;color:var(--deep)">Dashboard</h4>
+        <a class="shot" href="assets/img/tracker-dashboard.png" target="_blank" rel="noopener"><img src="assets/img/tracker-dashboard.png" width="1587" height="920" loading="lazy" alt="Tracker dashboard: funnel by cluster, source effectiveness and open issues, illustrative data"></a>
+        <h4 style="margin:20px 0 8px;color:var(--deep)">Applicants sheet</h4>
+        <a class="shot" href="assets/img/tracker-applicants.png" target="_blank" rel="noopener"><img src="assets/img/tracker-applicants.png" width="1661" height="1144" loading="lazy" alt="Applicants sheet with formula columns and colour-coded actions, illustrative data"></a>
+        <h4 style="margin:20px 0 8px;color:var(--deep)">Routing sheet</h4>
+        <a class="shot narrow" href="assets/img/tracker-routing.png" target="_blank" rel="noopener"><img src="assets/img/tracker-routing.png" width="1152" height="1564" loading="lazy" alt="Routing sheet mapping 46 tracks to 9 clusters"></a>
+        <figcaption>Select any sheet to open it at full size.</figcaption>
+        <p class="note" style="margin-top:14px">Candidate data rules I would follow: collect only what the hiring decision needs, keep one dated master record with access limited to the hiring team, and set a deletion date for unsuccessful applicants, in line with UU No. 27/2022 on personal data protection. I have not had formal training in that law.</p>
+      </div>
+    </div>
+
+    <nav class="pager" aria-label="Previous and next section">
+      <a href="#branding" data-go="branding"><small>Previous</small><b>Employer Branding</b></a>
+      <a class="next" href="#learning" data-go="learning"><small>Next</small><b>HR Learning</b></a>
+    </nav>
+  </div>
+</section>
+
+<!-- ======================================================= HR LEARNING -->
+<section class="view" id="learning" data-bg="assets/img/bg-learning.jpg" data-title="HR Learning">
+  <div class="wrap">
+    <div class="view-head">
+      <h2>HR learning: ten MySkill courses, and where I would use them</h2>
+      <p class="lede">My degree is engineering, so I studied the HR side on purpose. These are the ten self-paced MySkill e-learning courses I have taken, grouped by the part of this internship they support.</p>
+    </div>
+
+    <div class="courses">
+      <div class="course-group">
+        <h3>Foundations</h3>
+        <div class="course"><span class="n">1</span><div><b>Human Resources Introduction</b></div></div>
+        <div class="course"><span class="n">2</span><div><b>Fundamentals HR Frameworks</b></div></div>
+        <div class="use"><b>At Electronic City:</b> knowing where talent acquisition and employer branding sit in the wider HR cycle, so what I hand over is usable by the next step.</div>
+      </div>
+      <div class="course-group">
+        <h3>Hiring</h3>
+        <div class="course"><span class="n">3</span><div><b>Talent Acquisition</b></div></div>
+        <div class="use"><b>At Electronic City:</b> the same screening steps for every track, and a shortlist each user department can compare.</div>
+      </div>
+      <div class="course-group">
+        <h3>Organisation, performance and reward</h3>
+        <div class="course"><span class="n">4</span><div><b>Organization Design &amp; Goal Setting</b></div></div>
+        <div class="course"><span class="n">5</span><div><b>Organization Development &amp; Analysis</b></div></div>
+        <div class="course"><span class="n">6</span><div><b>Performance Management System</b></div></div>
+        <div class="course"><span class="n">7</span><div><b>Creating Performance Management System</b></div></div>
+        <div class="course"><span class="n">8</span><div><b>Compensation and Benefits Fundamental</b></div></div>
+        <div class="use"><b>At Electronic City:</b> routing 46 tracks to the teams that own them, agreeing written goals for each intern with the user department, and keeping the intern allowance and certificate paperwork straight.</div>
+      </div>
+      <div class="course-group">
+        <h3>People data</h3>
+        <div class="course"><span class="n">9</span><div><b>Introduction to People Analytics</b></div></div>
+        <div class="course"><span class="n">10</span><div><b>People Analytics Fundamental</b></div></div>
+        <div class="use"><b>At Electronic City:</b> time-to-fill, pass-through per stage, days an applicant waits, offer acceptance, and source effectiveness counted on joins after removing duplicates. The tracker under Administration is the working version.</div>
+      </div>
+    </div>
+
+    <div class="grid g-5-7" style="margin-top:20px">
+      <div class="panel chart">
+        <h3>Why I check what a number counts</h3>
+        <svg viewBox="0 0 420 250" role="img" aria-labelledby="ct cd">
+          <title id="ct">The same leaf, measured three times</title>
+          <desc id="cd">At 1 kilohertz the same leaf read 1.05 kilohms with a 1 kilohm calibration resistor, 50.9 kilohms with a 51 kilohm resistor and 91.2 kilohms with a 100 kilohm resistor.</desc>
+          <text x="0" y="16" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="15" fill="#3F2A7A">Same leaf, measured at 1 kHz</text>
+          <text x="0" y="36" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" fill="#475467">Reading under three calibration resistors</text>
+          <g font-family="Plus Jakarta Sans, sans-serif" font-size="13" fill="#101828">
+            <text x="0" y="68">Calibrated with 1 kΩ</text>
+            <text x="0" y="128">Calibrated with 51 kΩ</text>
+            <text x="0" y="188">Calibrated with 100 kΩ</text>
+          </g>
+          <g fill="#5B3FA8">
+            <rect x="0" y="76" width="3.5" height="24" rx="1.5"/>
+            <rect x="0" y="136" width="168" height="24" rx="3"/>
+            <rect x="0" y="196" width="301" height="24" rx="3"/>
+          </g>
+          <g font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="14" fill="#3F2A7A">
+            <text x="12" y="93">1.05 kΩ</text>
+            <text x="177" y="153">50.9 kΩ</text>
+            <text x="310" y="213">91.2 kΩ</text>
+          </g>
+          <line x1="0" y1="232" x2="330" y2="232" stroke="#475467" stroke-width="1"/>
+          <g font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" fill="#475467">
+            <text x="1" y="248">0</text><text x="165" y="248" text-anchor="middle">50</text><text x="330" y="248" text-anchor="middle">100 kΩ</text>
+          </g>
+        </svg>
+        <p style="margin-top:10px;font-size:15px">From a follow-up validity check of my thesis data (Smart Agriculture research group, UGM, July to September 2026): the reading followed the calibration setting, not the leaf, so I reported that instead of a stronger claim. The HR version is an interview score that moves with the interviewer, or a post whose reach grows while qualified applications do not.</p>
+      </div>
+      <div class="panel">
+        <h3>Other training and credentials</h3>
+        <ul class="dots">
+          <li><b>B+HR Youth Action Lab 2026</b>, UNDP Indonesia x Narasi Academy: business and human rights, the framework behind non-discriminatory hiring.</li>
+          <li><b>Leadership Class Batch 13</b>, Institut Harkat Negeri (May to June 2026).</li>
+          <li><b>Founding Fellow, Impact Leaders Fellowship 2026</b>, Pijar Foundation; <b>GerakDampak Academy 2026</b>, Indika Foundation; <b>Awardee, LETS Academy 2026</b>.</li>
+          <li><b>7 Makin Ahli quality and food-safety certificates</b>, August 2026: GMP, HACCP, ISO 22000:2018, FSSC 22000 v7.0, QA, QC and HACCP documentation, the grounding for the Cook &amp; Bake City tracks.</li>
+          <li><b>Education:</b> S.T.P., Agricultural Engineering, UGM, GPA 3.44/4.00 (2022 to 2026); SMK Negeri 63 Jakarta, final average 85.36 (2019 to 2022).</li>
+        </ul>
+        <div class="grid g2" style="margin-top:12px;gap:12px">
+          <figure><img src="assets/img/cert-bhr.jpg" width="900" height="646" loading="lazy" alt="Certificate of appreciation, B+HR Youth Action Lab 2026"></figure>
+          <figure><img src="assets/img/cert-ihn.jpg" width="819" height="579" loading="lazy" alt="Certificate, Leadership Class Batch 13, Institut Harkat Negeri"></figure>
+        </div>
+      </div>
+    </div>
+
+    <nav class="pager" aria-label="Previous section">
+      <a href="#admin" data-go="admin"><small>Previous</small><b>Administration</b></a>
+      <a class="next" href="#overview" data-go="overview"><small>Back to</small><b>Overview</b></a>
+    </nav>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>Les' Aullian Achmad Argito</h2>
+    <p>Jagakarsa, South Jakarta · available immediately, on site at SCBD · open to other Electronic City Group business units</p>
+    <p><a href="mailto:lesargito@gmail.com">lesargito@gmail.com</a> · <a href="https://www.linkedin.com/in/lesaullianachmadargito/" target="_blank" rel="noopener">linkedin.com/in/lesaullianachmadargito</a> · <a href="https://github.com/lesaullianachmadargito" target="_blank" rel="noopener">github.com/lesaullianachmadargito</a></p>
+    <p class="small">An independent job-application portfolio, not affiliated with or endorsed by PT Electronic City Indonesia Tbk. The two work samples are drafts built from public information (the intern form, the @ecikarir profile and its Linktree) and use illustrative data; they are not company documents. Student ID numbers are hidden and the recommendation letter's signature is cropped on this public page. Figures elsewhere come from my own certificates, reports and project files, available on request.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var views = Array.prototype.slice.call(document.querySelectorAll(".view"));
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  var ink = document.querySelector(".tabs .ink");
+  var nav = document.querySelector(".tabs");
+  var bgA = document.getElementById("bgA"), bgB = document.getElementById("bgB");
+  var front = bgA, current = null;
+  var baseTitle = "Les' Aullian Achmad Argito · Talent Acquisition & Employer Branding Portfolio";
+  var ids = views.map(function (v) { return v.id; });
+
+  function moveInk(instant) {
+    var t = document.querySelector('.tab[aria-current="page"]');
+    if (!t || !ink) return;
+    if (instant) ink.style.transition = "none";
+    ink.style.left = t.offsetLeft + "px";
+    ink.style.width = t.offsetWidth + "px";
+    if (instant) { void ink.offsetWidth; ink.style.transition = ""; }
+  }
+  function setBg(url) {
+    if (front.style.backgroundImage.indexOf(url) !== -1) return;
+    var back = front === bgA ? bgB : bgA;
+    back.style.backgroundImage = "url('" + url + "')";
+    back.classList.add("on");
+    front.classList.remove("on");
+    front = back;
+  }
+  function show(id, push) {
+    if (ids.indexOf(id) === -1) id = "overview";
+    var changed = id !== current;
+    views.forEach(function (v) { v.hidden = v.id !== id; });
+    tabs.forEach(function (t) {
+      if (t.getAttribute("data-go") === id) t.setAttribute("aria-current", "page");
+      else t.removeAttribute("aria-current");
+    });
+    var v = document.getElementById(id);
+    document.body.setAttribute("data-view", id);
+    setBg(v.getAttribute("data-bg"));
+    moveInk(current === null);
+    var active = document.querySelector('.tab[aria-current="page"]');
+    if (active && nav.scrollWidth > nav.clientWidth) {
+      nav.scrollTo({ left: active.offsetLeft - (nav.clientWidth - active.offsetWidth) / 2, behavior: "smooth" });
+    }
+    document.title = (id === "overview" ? "" : v.getAttribute("data-title") + " · ") + baseTitle;
+    if (push && location.hash !== "#" + id) history.pushState(null, "", "#" + id);
+    if (changed && current !== null) window.scrollTo(0, 0);
+    current = id;
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest ? e.target.closest("[data-go]") : null;
+    if (!a) return;
+    e.preventDefault();
+    show(a.getAttribute("data-go"), true);
+    var h = document.querySelector("#" + a.getAttribute("data-go") + " h1, #" + a.getAttribute("data-go") + " h2");
+    if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
+  });
+  window.addEventListener("popstate", function () { show(location.hash.slice(1), false); });
+  window.addEventListener("resize", function () { moveInk(true); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { moveInk(true); });
+  window.addEventListener("load", function () { moveInk(true); });
+  views.forEach(function (v) { var i = new Image(); i.src = v.getAttribute("data-bg"); });
+  show(location.hash.slice(1), false);
+})();
+</script>
+<noscript><style>.tabs .ink { display: none; } .tab[aria-current="page"] { color: #fff; }</style></noscript>
+</body>
+</html>
